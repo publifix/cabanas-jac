@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-<link rel="preload" as="image" href="img/hero-puente.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-cabanas-1920.webp" fetchpriority="high">
 <link rel="stylesheet" href="css/style.css">
 
 <script type="application/ld+json">
@@ -74,10 +74,9 @@
         class="brand-logo"
         src="img/logo-192.webp"
         srcset="img/logo-96.webp 96w, img/logo-192.webp 192w, img/logo-320.webp 320w"
-        sizes="52px"
+        sizes="72px"
         width="192" height="192"
         alt="Cabañas JAC">
-      <span class="brand-name">Cabañas JAC</span>
     </a>
 
     <nav class="nav-desktop" aria-label="Navegación principal">
@@ -127,11 +126,11 @@
   <section class="hero" id="inicio">
     <div class="hero-media" id="heroMedia">
       <picture>
-        <source srcset="img/hero-puente-480.webp 480w, img/hero-puente-900.webp 900w" sizes="100vw" type="image/webp">
+        <source srcset="img/hero-cabanas-480.webp 480w, img/hero-cabanas-900.webp 900w, img/hero-cabanas-1920.webp 1920w" sizes="100vw" type="image/webp">
         <img
-          src="img/hero-puente.webp"
-          width="900" height="1200"
-          alt="Puente de madera sobre el río en Cabañas JAC, rodeado de vegetación de la Huasteca Potosina"
+          src="img/hero-cabanas-900.webp"
+          width="1920" height="1607"
+          alt="Cabañas de piedra y madera de Cabañas JAC entre los árboles, al atardecer"
           fetchpriority="high"
           decoding="async">
       </picture>
@@ -286,6 +285,17 @@
             <p>Comida y bebida sin salir de Cabañas JAC.</p>
           </div>
         </div>
+
+        <div class="amenity-card">
+          <span class="amenity-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5a15 15 0 0 1 17 0"/><path d="M6.5 12a10.5 10.5 0 0 1 11 0"/><path d="M9.5 15.5a6 6 0 0 1 5 0"/><circle cx="12" cy="19" r="1" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <div>
+            <!-- MOCK: amenidad sin confirmar con el cliente -->
+            <h3>Wifi en áreas comunes</h3>
+            <p>Conexión disponible en recepción y restaurante-bar.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -329,76 +339,126 @@
         <p class="lead">Entorno de bambú y río, fachada y recepción, cabañas, áreas al aire libre y nuestro restaurante-bar.</p>
       </div>
 
-      <div class="gallery-grid stagger">
+      <div class="gallery-grid stagger" id="galleryGrid">
         <figure class="gallery-item wide">
-          <picture>
-            <source srcset="img/galeria-bambu-canal-480.webp 480w, img/galeria-bambu-canal-900.webp 900w, img/galeria-bambu-canal-1600.webp 1600w" sizes="(min-width: 768px) 45vw, 90vw" type="image/webp">
-            <img src="img/galeria-bambu-canal.webp" width="900" height="736" alt="Canal de agua entre un bosque de bambú en Cabañas JAC" loading="lazy" decoding="async">
-          </picture>
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Canal de agua entre un bosque de bambú en Cabañas JAC">
+            <picture>
+              <source srcset="img/galeria-bambu-canal-480.webp 480w, img/galeria-bambu-canal-900.webp 900w, img/galeria-bambu-canal-1600.webp 1600w" sizes="(min-width: 768px) 45vw, 90vw" type="image/webp">
+              <img src="img/galeria-bambu-canal.webp" width="900" height="736" alt="Canal de agua entre un bosque de bambú en Cabañas JAC" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
         </figure>
         <figure class="gallery-item tall">
-          <picture>
-            <source srcset="img/galeria-poza-480.webp 480w, img/galeria-poza-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
-            <img src="img/galeria-poza.webp" width="900" height="1125" alt="Poza de agua turquesa rodeada de vegetación cerca de Cabañas JAC" loading="lazy" decoding="async">
-          </picture>
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Cañón con cascada en la zona de las Cascadas de Tamasopo">
+            <picture>
+              <source srcset="img/galeria-canon-480.webp 480w, img/galeria-canon-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-canon.webp" width="900" height="1200" alt="Cañón con cascada en la zona de las Cascadas de Tamasopo" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
         </figure>
         <figure class="gallery-item tall">
-          <picture>
-            <source srcset="img/galeria-canon-480.webp 480w, img/galeria-canon-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
-            <img src="img/galeria-canon.webp" width="900" height="1200" alt="Cañón con cascada en la zona de las Cascadas de Tamasopo" loading="lazy" decoding="async">
-          </picture>
-        </figure>
-        <figure class="gallery-item wide">
-          <picture>
-            <source srcset="img/galeria-recepcion-480.webp 480w, img/galeria-recepcion-900.webp 900w, img/galeria-recepcion-1600.webp 1600w" sizes="(min-width: 768px) 45vw, 90vw" type="image/webp">
-            <img src="img/galeria-recepcion.webp" width="900" height="605" alt="Letrero de recepción de Cabañas JAC sobre un muro de piedra" loading="lazy" decoding="async">
-          </picture>
-        </figure>
-        <figure class="gallery-item tall">
-          <picture>
-            <source srcset="img/galeria-arco-480.webp 480w, img/galeria-arco-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
-            <img src="img/galeria-arco.webp" width="900" height="1182" alt="Arco de piedra entre la vegetación de Cabañas JAC" loading="lazy" decoding="async">
-          </picture>
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Poza de agua turquesa rodeada de vegetación cerca de Cabañas JAC">
+            <picture>
+              <source srcset="img/galeria-poza-480.webp 480w, img/galeria-poza-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-poza.webp" width="900" height="1125" alt="Poza de agua turquesa rodeada de vegetación cerca de Cabañas JAC" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
         </figure>
         <figure class="gallery-item square">
-          <picture>
-            <source srcset="img/galeria-puerta-cabana-480.webp 480w, img/galeria-puerta-cabana-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
-            <img src="img/galeria-puerta-cabana.webp" width="900" height="754" alt="Puerta de madera de una cabaña de Cabañas JAC" loading="lazy" decoding="async">
-          </picture>
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Letrero de recepción de Cabañas JAC sobre un muro de piedra">
+            <picture>
+              <source srcset="img/galeria-recepcion-480.webp 480w, img/galeria-recepcion-900.webp 900w, img/galeria-recepcion-1600.webp 1600w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-recepcion.webp" width="900" height="605" alt="Letrero de recepción de Cabañas JAC sobre un muro de piedra" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
         </figure>
         <figure class="gallery-item tall">
-          <picture>
-            <source srcset="img/galeria-terraza-cabana-480.webp 480w, img/galeria-terraza-cabana-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
-            <img src="img/galeria-terraza-cabana.webp" width="900" height="1350" alt="Terraza privada de una cabaña de Cabañas JAC con mesa y sillas" loading="lazy" decoding="async">
-          </picture>
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Puerta de madera de una cabaña de Cabañas JAC">
+            <picture>
+              <source srcset="img/galeria-puerta-cabana-480.webp 480w, img/galeria-puerta-cabana-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-puerta-cabana.webp" width="900" height="754" alt="Puerta de madera de una cabaña de Cabañas JAC" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
         </figure>
         <figure class="gallery-item square">
-          <picture>
-            <source srcset="img/galeria-balcon-480.webp 480w, img/galeria-balcon-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
-            <img src="img/galeria-balcon.webp" width="900" height="754" alt="Balcón con plantas y vista al bosque en Cabañas JAC" loading="lazy" decoding="async">
-          </picture>
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Arco de piedra entre la vegetación de Cabañas JAC">
+            <picture>
+              <source srcset="img/galeria-arco-480.webp 480w, img/galeria-arco-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-arco.webp" width="900" height="1182" alt="Arco de piedra entre la vegetación de Cabañas JAC" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
+        </figure>
+        <figure class="gallery-item tall">
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Terraza privada de una cabaña de Cabañas JAC con mesa y sillas">
+            <picture>
+              <source srcset="img/galeria-terraza-cabana-480.webp 480w, img/galeria-terraza-cabana-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-terraza-cabana.webp" width="900" height="1350" alt="Terraza privada de una cabaña de Cabañas JAC con mesa y sillas" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
         </figure>
         <figure class="gallery-item square">
-          <picture>
-            <source srcset="img/galeria-jardin-480.webp 480w, img/galeria-jardin-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
-            <img src="img/galeria-jardin.webp" width="900" height="900" alt="Andador y mesas de picnic entre los jardines de Cabañas JAC" loading="lazy" decoding="async">
-          </picture>
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Balcón con plantas y vista al bosque en Cabañas JAC">
+            <picture>
+              <source srcset="img/galeria-balcon-480.webp 480w, img/galeria-balcon-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-balcon.webp" width="900" height="754" alt="Balcón con plantas y vista al bosque en Cabañas JAC" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
         </figure>
         <figure class="gallery-item tall">
-          <picture>
-            <source srcset="img/galeria-pasillo-noche-480.webp 480w, img/galeria-pasillo-noche-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
-            <img src="img/galeria-pasillo-noche.webp" width="900" height="1200" alt="Pasillo techado de bambú iluminado al anochecer en Cabañas JAC" loading="lazy" decoding="async">
-          </picture>
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Pasillo techado de bambú iluminado al anochecer en Cabañas JAC">
+            <picture>
+              <source srcset="img/galeria-pasillo-noche-480.webp 480w, img/galeria-pasillo-noche-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-pasillo-noche.webp" width="900" height="1200" alt="Pasillo techado de bambú iluminado al anochecer en Cabañas JAC" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
+        </figure>
+        <figure class="gallery-item square">
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Andador y mesas de picnic entre los jardines de Cabañas JAC">
+            <picture>
+              <source srcset="img/galeria-jardin-480.webp 480w, img/galeria-jardin-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-jardin.webp" width="900" height="900" alt="Andador y mesas de picnic entre los jardines de Cabañas JAC" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
         </figure>
         <figure class="gallery-item tall">
-          <picture>
-            <source srcset="img/galeria-puente-entrada-480.webp 480w, img/galeria-puente-entrada-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
-            <img src="img/galeria-puente-entrada.webp" width="900" height="1200" alt="Puente de entrada a Cabañas JAC y su restaurante-bar sobre el río" loading="lazy" decoding="async">
-          </picture>
+          <button class="gallery-trigger" type="button" aria-label="Ampliar: Puente de entrada a Cabañas JAC y su restaurante-bar sobre el río">
+            <picture>
+              <source srcset="img/galeria-puente-entrada-480.webp 480w, img/galeria-puente-entrada-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+              <img src="img/galeria-puente-entrada.webp" width="900" height="1200" alt="Puente de entrada a Cabañas JAC y su restaurante-bar sobre el río" loading="lazy" decoding="async">
+            </picture>
+            <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+          </button>
         </figure>
       </div>
     </div>
   </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galería de imágenes ampliada" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar galería">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior">
+      <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <figure class="lightbox-stage">
+      <img id="lightboxImg" src="" alt="" decoding="async">
+      <figcaption>
+        <span id="lightboxCaption"></span>
+        <span class="lightbox-counter" id="lightboxCounter"></span>
+      </figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Imagen siguiente">
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
 
   <!-- 8. TESTIMONIOS -->
   <section class="section-pad bg-piedra-soft" id="testimonios">
@@ -407,19 +467,40 @@
         <p class="kicker">Huéspedes</p>
         <h2>Lo que se vive en Cabañas JAC</h2>
       </div>
-      <!-- MOCK: testimonios de ejemplo; sustituir por reseñas reales del cliente -->
+      <!-- MOCK: testimonios y nombres de ejemplo; sustituir por reseñas reales del cliente -->
       <div class="cards-grid cols-3 stagger">
         <div class="testimonial-card">
+          <div class="testimonial-stars" role="img" aria-label="5 de 5 estrellas">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
           <p class="testimonial-quote">Llegamos cansados de manejar y el lugar nos regresó la calma de inmediato. Las cascadas están prácticamente a un paso.</p>
-          <p class="testimonial-author">Huésped</p>
+          <p class="testimonial-author">Daniela Reyes</p>
         </div>
         <div class="testimonial-card">
+          <div class="testimonial-stars" role="img" aria-label="5 de 5 estrellas">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
           <p class="testimonial-quote">La cabaña estaba justo como se veía en fotos, rodeada de verde de verdad. Volveríamos sin pensarlo.</p>
-          <p class="testimonial-author">Huésped</p>
+          <p class="testimonial-author">Carlos Medina</p>
         </div>
         <div class="testimonial-card">
+          <div class="testimonial-stars" role="img" aria-label="5 de 5 estrellas">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
           <p class="testimonial-quote">Cenamos en el restaurante-bar después de un día completo de cascadas — el cierre perfecto.</p>
-          <p class="testimonial-author">Huésped</p>
+          <p class="testimonial-author">Fernanda López</p>
         </div>
       </div>
     </div>
@@ -488,7 +569,7 @@
           class="brand-logo"
           src="img/logo-192.webp"
           srcset="img/logo-96.webp 96w, img/logo-192.webp 192w, img/logo-320.webp 320w"
-          sizes="56px"
+          sizes="72px"
           width="192" height="192"
           alt="Cabañas JAC">
         <p>Hospedaje en contacto con la naturaleza, en el corazón de la Huasteca Potosina.</p>
@@ -504,10 +585,6 @@
 
       <div class="footer-col">
         <h4>Síguenos</h4>
-        <ul>
-          <li><a href="https://www.instagram.com/cabanas_jac" target="_blank" rel="noopener">Instagram @cabanas_jac</a></li>
-          <li><a href="https://www.facebook.com/jactamasopo" target="_blank" rel="noopener">Facebook</a></li>
-        </ul>
         <div class="footer-social">
           <a href="https://www.instagram.com/cabanas_jac" target="_blank" rel="noopener" aria-label="Instagram de Cabañas JAC">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 2.1.25 2.83.53a5.7 5.7 0 0 1 2.06 1.34 5.7 5.7 0 0 1 1.34 2.06c.28.72.48 1.66.53 2.83.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 2.1-.53 2.83a5.9 5.9 0 0 1-3.4 3.4c-.72.28-1.66.48-2.83.53-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-2.1-.25-2.83-.53a5.7 5.7 0 0 1-2.06-1.34 5.7 5.7 0 0 1-1.34-2.06c-.28-.72-.48-1.66-.53-2.83C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.25-2.1.53-2.83A5.7 5.7 0 0 1 4.14 2.26 5.7 5.7 0 0 1 6.2.92c.72-.28 1.66-.48 2.83-.53C10.28 2.2 10.68 2.2 12 2.2zm0 3.05a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5zm0 11.13a4.38 4.38 0 1 1 0-8.76 4.38 4.38 0 0 1 0 8.76zm7.02-11.4a1.58 1.58 0 1 1-3.15 0 1.58 1.58 0 0 1 3.15 0z"/></svg>

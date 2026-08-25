@@ -12,7 +12,7 @@ os.makedirs(IMG_DIR, exist_ok=True)
 
 # slug -> source filename (relative to repo root)
 SOURCES = {
-    "hero-puente":            "FB_IMG_1787595640112.jpg_18_11zon.webp",
+    "hero-cabanas":           "FB_IMG_1787595501848.jpg_1_11zon.webp",
     "sobre-fachada":          "FB_IMG_1787595580157.jpg_7_11zon.webp",
     "alojamiento-habitacion": "FB_IMG_1787595711180.jpg_25_11zon.webp",
     "alojamiento-cabanas":    "FB_IMG_1787595501848.jpg_1_11zon.webp",
@@ -54,12 +54,30 @@ for slug, filename in SOURCES.items():
             made_default = True
     print(f"{slug}: {w0}x{h0} -> variants written")
 
-# Logo: header (small, retina-ready, transparent bg) + favicon/touch-icon/manifest sources (opaque)
+# Hero needs a bit more width than its 1320px source photo natively has for
+# a crisp full-bleed background on large screens; a mild Lanczos upscale
+# reads better than letting the browser stretch the 900w file further.
+hero_src = Image.open(os.path.join(ROOT, SOURCES["hero-cabanas"])).convert("RGB")
+hw0, hh0 = hero_src.size
+hero_up = hero_src.resize((1920, round(hh0 * (1920 / hw0))), Image.LANCZOS)
+hero_up.save(os.path.join(IMG_DIR, "hero-cabanas-1920.webp"), "WEBP", quality=80, method=6)
+
+# Logo: header/footer badge -- keep the logo's own opaque white disc (so it
+# reads with full contrast on ANY background, light or dark) and only clip
+# the square canvas corners to a circle, since a fully transparent-background
+# version made the logo's dark maroon wordmark disappear against the equally
+# dark Vino Jac header/footer.
 logo = Image.open(os.path.join(ROOT, "logo-jac-cabanas.webp")).convert("RGB")
-logo_transparent = logo.convert("RGBA")
-ImageDraw.floodfill(logo_transparent, (0, 0), (255, 255, 255, 0), thresh=40)
+logo_rgba = logo.convert("RGBA")
+w0, h0 = logo_rgba.size
+cx, cy = w0 / 2, h0 / 2
+r = 1800  # a hair past the disc's own edge (~1764px) so the white ring isn't clipped
+mask = Image.new("L", (w0, h0), 0)
+ImageDraw.Draw(mask).ellipse((cx - r, cy - r, cx + r, cy + r), fill=255)
+logo_badge = logo_rgba.copy()
+logo_badge.putalpha(mask)
 for w in (96, 192, 320):
-    resized = logo_transparent.resize((w, w), Image.LANCZOS)
+    resized = logo_badge.resize((w, w), Image.LANCZOS)
     resized.save(os.path.join(IMG_DIR, f"logo-{w}.webp"), "WEBP", quality=90, method=6)
 
 for size, name in ((32, "favicon-32.png"), (16, "favicon-16.png"),
@@ -69,7 +87,7 @@ for size, name in ((32, "favicon-32.png"), (16, "favicon-16.png"),
     resized.save(os.path.join(ROOT, name), "PNG")
 
 # OG / Twitter share image (1200x630) cropped from the hero photo
-hero = Image.open(os.path.join(ROOT, SOURCES["hero-puente"])).convert("RGB")
+hero = Image.open(os.path.join(ROOT, SOURCES["hero-cabanas"])).convert("RGB")
 target_ratio = 1200 / 630
 w0, h0 = hero.size
 cur_ratio = w0 / h0
