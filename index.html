@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabañas JAC</title>
+<meta name="description" content="Cabañas JAC — alojamiento y descanso en contacto con la naturaleza.">
+<style>
+  :root{
+    --bg:#faf7f2;
+    --ink:#2b241c;
+    --muted:#6b6053;
+    --accent:#7a8b5c;
+    --accent-dark:#5b6a41;
+    --card:#ffffff;
+    --border:#e7e0d4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1rem 1.5rem;
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+  }
+  .brand img{
+    height:42px;
+    width:42px;
+    object-fit:contain;
+    border-radius:8px;
+  }
+  .brand span{
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:.01em;
+  }
+  nav a{
+    color:var(--ink);
+    text-decoration:none;
+    margin-left:1.5rem;
+    font-size:.95rem;
+  }
+  nav a:hover{color:var(--accent-dark);}
+
+  .hero{
+    position:relative;
+    min-height:64vh;
+    display:flex;
+    align-items:flex-end;
+    background:#000;
+  }
+  .hero img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.75;
+  }
+  .hero-content{
+    position:relative;
+    padding:3rem 1.5rem;
+    color:#fff;
+    max-width:720px;
+  }
+  .hero-content h1{
+    font-size:clamp(2rem,5vw,3.2rem);
+    margin:0 0 .5rem;
+  }
+  .hero-content p{
+    font-size:1.1rem;
+    margin:0 0 1.5rem;
+    opacity:.95;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    padding:.75rem 1.5rem;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+    transition:background .2s ease;
+  }
+  .btn:hover{background:var(--accent-dark);}
+
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:3rem 1.5rem;
+  }
+  section{margin-bottom:3.5rem;}
+  section h2{
+    font-size:1.6rem;
+    margin-bottom:.4rem;
+  }
+  section .lead{
+    color:var(--muted);
+    margin-bottom:1.5rem;
+    max-width:640px;
+  }
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:.8rem;
+  }
+  .gallery figure{
+    margin:0;
+    border-radius:12px;
+    overflow:hidden;
+    aspect-ratio:4/3;
+    background:var(--border);
+  }
+  .gallery img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .3s ease;
+  }
+  .gallery figure:hover img{transform:scale(1.06);}
+
+  footer{
+    background:var(--card);
+    border-top:1px solid var(--border);
+    padding:2rem 1.5rem;
+    text-align:center;
+    color:var(--muted);
+    font-size:.9rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <img src="logo-jac-cabanas.webp" alt="Logo Cabañas JAC">
+    <span>Cabañas JAC</span>
+  </div>
+  <nav>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <img src="FB_IMG_1787595501848.jpg_1_11zon.webp" alt="Cabañas JAC">
+  <div class="hero-content">
+    <h1>Cabañas JAC</h1>
+    <p>Descanso, naturaleza y tranquilidad en un solo lugar.</p>
+    <a class="btn" href="#contacto">Reserva ahora</a>
+  </div>
+</div>
+
+<main>
+  <section id="galeria">
+    <h2>Galería</h2>
+    <p class="lead">Un vistazo a nuestras cabañas y alrededores.</p>
+    <div class="gallery">
+      <figure><img src="FB_IMG_1787595504466.jpg_2_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595506877.jpg_3_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595514251.jpg_4_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595558377.jpg_5_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595565446.jpg_6_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595580157.jpg_7_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595586547.jpg_8_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595592722.jpg_9_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595601954.jpg_10_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595605345.jpg_11_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595607505.jpg_12_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595616628.jpg_13_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595619317.jpg_14_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595625893.jpg_15_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595630260.jpg_16_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595637192.jpg_17_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595640112.jpg_18_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595646976.jpg_19_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595648897.jpg_20_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595666550.jpg_21_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595679493.jpg_22_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595685669.jpg_23_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595701429.jpg_24_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+      <figure><img src="FB_IMG_1787595711180.jpg_25_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p class="lead">Este sitio está en construcción — pronto agregaremos precios, disponibilidad y formulario de reserva.</p>
+  </section>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Cabañas JAC. Todos los derechos reservados.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
