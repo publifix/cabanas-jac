@@ -110,18 +110,24 @@
   }
 
   /* ------------------------------------------------------------------
-     Hero parallax — subtle, transform-only, capped, skipped on reduced motion
+     Hero parallax — desktop only (matches the CSS breakpoint that adds
+     the overscan the transform needs); subtle, transform-only, capped,
+     skipped on reduced motion. Mobile/tablet get a plain static hero
+     image instead, by design (see .hero-media in style.css).
      ------------------------------------------------------------------ */
   var heroMedia = document.getElementById("heroMedia");
+  var isDesktop = window.matchMedia("(min-width: 1024px)").matches;
 
-  if (heroMedia && !reduceMotion) {
+  if (heroMedia && !reduceMotion && isDesktop) {
     var heroEl = document.getElementById("inicio");
     var parallaxTicking = false;
 
     function updateParallax() {
       var rect = heroEl.getBoundingClientRect();
       if (rect.bottom > 0 && rect.top < window.innerHeight) {
-        var progress = 1 - rect.bottom / (window.innerHeight + rect.height);
+        /* 0 at the top of the page, reaching 1 once the hero has fully
+           scrolled past -- so the shift starts at 0, never mid-way. */
+        var progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
         var shift = progress * 14; /* max ~14% translate, well under the 15-20% cap */
         heroMedia.style.transform = "translateY(" + shift.toFixed(2) + "%)";
       }

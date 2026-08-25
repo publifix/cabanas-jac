@@ -73,7 +73,6 @@ body {
 }
 
 img { max-width: 100%; display: block; }
-picture { display: block; }
 
 a { color: inherit; text-decoration: none; }
 
@@ -123,7 +122,7 @@ input:focus-visible {
 /* Type scale */
 h1, .h1 {
   font-size: clamp(2.125rem, 6.5vw, 4.25rem);
-  font-weight: 800;
+  font-weight: 700;
 }
 h2, .h2 {
   font-size: clamp(1.625rem, 4.4vw, 2.625rem);
@@ -421,23 +420,49 @@ section { position: relative; }
 
 .hero {
   position: relative;
-  min-height: 100svh;
+  /* An explicit `height` (not just min-height) so every descendant's
+     percentage height resolves definitely -- a `min-height`-only section
+     computes to `height: auto`, and CSS only resolves a child's
+     percentage height against a containing block whose own `height`
+     property is itself a definite length, not one merely implied by
+     min-height or by top+bottom insets further down the chain. vh is a
+     fallback for browsers without svh support (an unsupported value
+     invalidates the whole declaration, so without it the rule below
+     would simply not apply); svh then overrides it where supported,
+     excluding mobile browser chrome. */
+  height: 100vh;
+  height: 100svh;
+  min-height: 480px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
   background: var(--carbon);
 }
 .hero-media {
+  /* Mobile/tablet: a plain, bulletproof full-bleed layer, explicitly
+     sized (not just inset) so the image's own height:100% below has a
+     definite box to resolve against. The parallax overscan (and the
+     transform that drives it) is opt-in only at desktop widths below,
+     where it's paired with the JS in main.js. */
   position: absolute;
-  inset: -8% 0 0 0;
-  height: 116%;
-  will-change: transform;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 .hero-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 38%;
+}
+
+@media (min-width: 1024px) {
+  .hero-media {
+    inset: -8% 0 0 0;
+    width: 100%;
+    height: 116%;
+    will-change: transform;
+  }
 }
 .hero-scrim {
   position: absolute;
@@ -475,6 +500,17 @@ section { position: relative; }
   margin-bottom: 2.1rem;
 }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+@media (max-width: 479px) {
+  /* A dedicated, compact mobile layout for the hero content: full-width
+     stacked CTAs (cleaner than an uneven two-column wrap on narrow
+     screens) and a touch tighter rhythm so everything sits comfortably
+     inside the viewport. */
+  .hero-content { padding-block-end: 2.25rem; }
+  .hero-sub { margin-bottom: 1.5rem; }
+  .hero-ctas { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+  .hero-ctas .btn { width: 100%; }
+}
 
 .scroll-cue {
   position: absolute;
@@ -564,7 +600,11 @@ section { position: relative; }
 .about-media img { width: 100%; height: 100%; object-fit: cover; }
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* minmax(0, 1fr), not a bare 1fr: grid tracks default to a min size of
+     the content's min-content width, which would otherwise refuse to
+     shrink the long "Restaurante-bar propio" label below its widest word
+     and blow out the layout on very narrow phones. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2.25rem;
   padding-top: 1.75rem;
@@ -577,10 +617,20 @@ section { position: relative; }
   color: var(--vino);
 }
 .about-stats span {
+  display: block;
   font-size: 0.82rem;
   color: var(--madera);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 359px) {
+  /* Below the smallest common phone width, three columns leaves each
+     label too little room even hyphenated; stack the numbers instead. */
+  .about-stats { grid-template-columns: 1fr; gap: 0.75rem; }
+  .about-stats > div { display: flex; align-items: baseline; gap: 0.5rem; }
 }
 
 @media (min-width: 1024px) {
