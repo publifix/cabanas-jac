@@ -2,217 +2,540 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cabañas JAC</title>
-<meta name="description" content="Cabañas JAC — alojamiento y descanso en contacto con la naturaleza.">
-<style>
-  :root{
-    --bg:#faf7f2;
-    --ink:#2b241c;
-    --muted:#6b6053;
-    --accent:#7a8b5c;
-    --accent-dark:#5b6a41;
-    --card:#ffffff;
-    --border:#e7e0d4;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-  }
-  header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:1rem 1.5rem;
-    background:var(--card);
-    border-bottom:1px solid var(--border);
-    position:sticky;
-    top:0;
-    z-index:10;
-  }
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:.6rem;
-  }
-  .brand img{
-    height:42px;
-    width:42px;
-    object-fit:contain;
-    border-radius:8px;
-  }
-  .brand span{
-    font-weight:700;
-    font-size:1.15rem;
-    letter-spacing:.01em;
-  }
-  nav a{
-    color:var(--ink);
-    text-decoration:none;
-    margin-left:1.5rem;
-    font-size:.95rem;
-  }
-  nav a:hover{color:var(--accent-dark);}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cabañas JAC — Hospedaje en las Cascadas de Tamasopo, Huasteca Potosina</title>
+<meta name="description" content="Cabañas y habitaciones rodeadas de naturaleza en Tamasopo, S.L.P., a un paso de las Cascadas de Tamasopo. Áreas verdes, asadores, estacionamiento y restaurante-bar propio.">
+<meta name="keywords" content="Cabañas JAC, Tamasopo, Cascadas de Tamasopo, Huasteca Potosina, hospedaje Tamasopo, cabañas San Luis Potosí, hotel Huasteca Potosina">
+<meta name="author" content="Cabañas JAC">
+<link rel="canonical" href="https://publifix.github.io/cabanas-jac/">
 
-  .hero{
-    position:relative;
-    min-height:64vh;
-    display:flex;
-    align-items:flex-end;
-    background:#000;
-  }
-  .hero img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    opacity:.75;
-  }
-  .hero-content{
-    position:relative;
-    padding:3rem 1.5rem;
-    color:#fff;
-    max-width:720px;
-  }
-  .hero-content h1{
-    font-size:clamp(2rem,5vw,3.2rem);
-    margin:0 0 .5rem;
-  }
-  .hero-content p{
-    font-size:1.1rem;
-    margin:0 0 1.5rem;
-    opacity:.95;
-  }
-  .btn{
-    display:inline-block;
-    background:var(--accent);
-    color:#fff;
-    padding:.75rem 1.5rem;
-    border-radius:999px;
-    text-decoration:none;
-    font-weight:600;
-    transition:background .2s ease;
-  }
-  .btn:hover{background:var(--accent-dark);}
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="lodging.hotel">
+<meta property="og:site_name" content="Cabañas JAC">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://publifix.github.io/cabanas-jac/">
+<meta property="og:title" content="Cabañas JAC — Hospedaje en las Cascadas de Tamasopo">
+<meta property="og:description" content="Cabañas y habitaciones rodeadas de naturaleza en Tamasopo, S.L.P., a un paso de las Cascadas de Tamasopo. Áreas verdes, asadores, estacionamiento y restaurante-bar propio.">
+<meta property="og:image" content="https://publifix.github.io/cabanas-jac/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cabañas JAC — Hospedaje en las Cascadas de Tamasopo">
+<meta name="twitter:description" content="Escapadas sin complicaciones en cabañas rodeadas de naturaleza, a un paso de las Cascadas de Tamasopo.">
+<meta name="twitter:image" content="https://publifix.github.io/cabanas-jac/og-image.jpg">
 
-  main{
-    max-width:1100px;
-    margin:0 auto;
-    padding:3rem 1.5rem;
-  }
-  section{margin-bottom:3.5rem;}
-  section h2{
-    font-size:1.6rem;
-    margin-bottom:.4rem;
-  }
-  section .lead{
-    color:var(--muted);
-    margin-bottom:1.5rem;
-    max-width:640px;
-  }
+<!-- Icons / Manifest -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#4a1310">
 
-  .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-    gap:.8rem;
-  }
-  .gallery figure{
-    margin:0;
-    border-radius:12px;
-    overflow:hidden;
-    aspect-ratio:4/3;
-    background:var(--border);
-  }
-  .gallery img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    transition:transform .3s ease;
-  }
-  .gallery figure:hover img{transform:scale(1.06);}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-  footer{
-    background:var(--card);
-    border-top:1px solid var(--border);
-    padding:2rem 1.5rem;
-    text-align:center;
-    color:var(--muted);
-    font-size:.9rem;
-  }
-</style>
+<link rel="preload" as="image" href="img/hero-puente.webp" fetchpriority="high">
+<link rel="stylesheet" href="css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Cabañas JAC",
+  "description": "Complejo de hospedaje con habitaciones y cabañas, áreas verdes, asadores, estacionamiento y restaurante-bar propio, en Tamasopo, S.L.P., cerca de las Cascadas de Tamasopo.",
+  "url": "https://publifix.github.io/cabanas-jac/",
+  "image": "https://publifix.github.io/cabanas-jac/og-image.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tamasopo",
+    "addressRegion": "San Luis Potosí",
+    "addressCountry": "MX"
+  },
+  "sameAs": [
+    "https://www.instagram.com/cabanas_jac",
+    "https://www.facebook.com/jactamasopo"
+  ]
+}
+</script>
+<!-- MOCK: street address y geo/lat-lng pendientes de confirmar con el cliente; no se inventan valores. -->
 </head>
 <body>
 
-<header>
-  <div class="brand">
-    <img src="logo-jac-cabanas.webp" alt="Logo Cabañas JAC">
-    <span>Cabañas JAC</span>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#inicio" class="brand" aria-label="Cabañas JAC — Inicio">
+      <img
+        class="brand-logo"
+        src="img/logo-192.webp"
+        srcset="img/logo-96.webp 96w, img/logo-192.webp 192w, img/logo-320.webp 320w"
+        sizes="52px"
+        width="192" height="192"
+        alt="Cabañas JAC">
+      <span class="brand-name">Cabañas JAC</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#alojamiento">Alojamiento</a></li>
+        <li><a href="#restaurante-bar">Restaurante-Bar</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <!-- MOCK: reemplazar href con el link real de WhatsApp en cuanto el cliente confirme el número -->
+      <a href="#" class="btn btn-sm nav-cta">Reserva tu cabaña</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
-  <nav>
-    <a href="#galeria">Galería</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
 </header>
 
-<div class="hero">
-  <img src="FB_IMG_1787595501848.jpg_1_11zon.webp" alt="Cabañas JAC">
-  <div class="hero-content">
-    <h1>Cabañas JAC</h1>
-    <p>Descanso, naturaleza y tranquilidad en un solo lugar.</p>
-    <a class="btn" href="#contacto">Reserva ahora</a>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="menu-close" id="menuClose" aria-label="Cerrar menú">&times;</button>
+  <div class="mobile-menu-content">
+    <nav aria-label="Navegación móvil">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#alojamiento">Alojamiento</a></li>
+        <li><a href="#restaurante-bar">Restaurante-Bar</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <!-- MOCK: reemplazar href con el link real de WhatsApp -->
+    <a href="#" class="btn">Reserva tu cabaña</a>
   </div>
 </div>
 
-<main>
-  <section id="galeria">
-    <h2>Galería</h2>
-    <p class="lead">Un vistazo a nuestras cabañas y alrededores.</p>
-    <div class="gallery">
-      <figure><img src="FB_IMG_1787595504466.jpg_2_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595506877.jpg_3_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595514251.jpg_4_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595558377.jpg_5_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595565446.jpg_6_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595580157.jpg_7_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595586547.jpg_8_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595592722.jpg_9_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595601954.jpg_10_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595605345.jpg_11_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595607505.jpg_12_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595616628.jpg_13_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595619317.jpg_14_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595625893.jpg_15_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595630260.jpg_16_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595637192.jpg_17_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595640112.jpg_18_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595646976.jpg_19_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595648897.jpg_20_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595666550.jpg_21_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595679493.jpg_22_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595685669.jpg_23_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595701429.jpg_24_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
-      <figure><img src="FB_IMG_1787595711180.jpg_25_11zon.webp" loading="lazy" alt="Cabañas JAC"></figure>
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-media" id="heroMedia">
+      <picture>
+        <source srcset="img/hero-puente-480.webp 480w, img/hero-puente-900.webp 900w" sizes="100vw" type="image/webp">
+        <img
+          src="img/hero-puente.webp"
+          width="900" height="1200"
+          alt="Puente de madera sobre el río en Cabañas JAC, rodeado de vegetación de la Huasteca Potosina"
+          fetchpriority="high"
+          decoding="async">
+      </picture>
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-content container">
+      <p class="kicker">Huasteca Potosina · Tamasopo, S.L.P.</p>
+      <h1>Cabañas reales,<br>naturaleza real</h1>
+      <p class="hero-sub">Escapadas sin complicaciones en cabañas rodeadas de naturaleza, a un paso de las Cascadas de Tamasopo. Una aventura que jamás olvidarás.</p>
+      <div class="hero-ctas">
+        <!-- MOCK: reemplazar href con el link real de WhatsApp -->
+        <a href="#" class="btn">Reserva tu cabaña</a>
+        <a href="#nosotros" class="btn btn-outline">Conoce el lugar</a>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- 2. SOBRE CABAÑAS JAC -->
+  <section class="section-pad bg-piedra" id="nosotros">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-media reveal">
+          <picture>
+            <source srcset="img/sobre-fachada-480.webp 480w, img/sobre-fachada-900.webp 900w, img/sobre-fachada-1600.webp 1600w" sizes="(min-width: 1024px) 45vw, 90vw" type="image/webp">
+            <img src="img/sobre-fachada.webp" width="900" height="754" alt="Fachada y recepción de Cabañas JAC entre los árboles" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="reveal">
+          <p class="kicker">Sobre Nosotros</p>
+          <h2>Tu escape en la Huasteca Potosina</h2>
+          <p class="lead">Cabañas JAC es un complejo de hospedaje en Tamasopo, en el corazón de la Huasteca Potosina, muy cerca de las Cascadas de Tamasopo. Habitaciones y cabañas cómodas, áreas verdes, asadores y acceso a nuestro restaurante-bar hacen de este un punto de partida perfecto para explorar la región — sin complicaciones, solo naturaleza.</p>
+          <div class="about-stats">
+            <div><strong>2</strong><span>Tipos de estancia</span></div>
+            <div><strong>5+</strong><span>Amenidades</span></div>
+            <div><strong>1</strong><span>Restaurante-bar propio</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p class="lead">Este sitio está en construcción — pronto agregaremos precios, disponibilidad y formulario de reserva.</p>
+  <!-- 3. ALOJAMIENTO -->
+  <section class="section-pad bg-piedra-soft" id="alojamiento">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="kicker">Alojamiento</p>
+        <h2>Habitaciones y cabañas para tu estancia</h2>
+        <p class="lead">Elige entre habitaciones y cabañas cómodas, pensadas para descansar después de un día explorando la Huasteca.</p>
+      </div>
+
+      <div class="cards-grid stagger">
+        <article class="stay-card">
+          <div class="stay-media">
+            <picture>
+              <source srcset="img/alojamiento-habitacion-480.webp 480w, img/alojamiento-habitacion-900.webp 900w, img/alojamiento-habitacion-1600.webp 1600w" sizes="(min-width: 768px) 45vw, 90vw" type="image/webp">
+              <img src="img/alojamiento-habitacion.webp" width="900" height="755" alt="Interior de una habitación en Cabañas JAC con cama matrimonial y muebles de madera" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="stay-body">
+            <h3>Habitaciones</h3>
+            <p>Espacios cómodos dentro del complejo, ideales para estancias prácticas sin dejar de estar rodeado de naturaleza.</p>
+            <div class="stay-specs">
+              <!-- MOCK: capacidad y tarifas pendientes de confirmar con el cliente -->
+              <span class="spec-pill">Capacidad: por confirmar</span>
+              <span class="spec-pill">Tarifa: por confirmar</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="stay-card">
+          <div class="stay-media">
+            <picture>
+              <source srcset="img/alojamiento-cabanas-480.webp 480w, img/alojamiento-cabanas-900.webp 900w" sizes="(min-width: 768px) 45vw, 90vw" type="image/webp">
+              <img src="img/alojamiento-cabanas.webp" width="900" height="753" alt="Fila de cabañas de Cabañas JAC con techo de teja y base de piedra, entre árboles" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="stay-body">
+            <h3>Cabañas</h3>
+            <p>Cabañas privadas rodeadas de áreas verdes, con acceso a asadores y espacios al aire libre.</p>
+            <div class="stay-specs">
+              <!-- MOCK: capacidad y tarifas pendientes de confirmar con el cliente -->
+              <span class="spec-pill">Capacidad: por confirmar</span>
+              <span class="spec-pill">Tarifa: por confirmar</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-cta reveal">
+        <!-- MOCK: reemplazar href con el link real de WhatsApp -->
+        <a href="#" class="btn">Reserva tu cabaña</a>
+      </div>
+    </div>
   </section>
+
+  <!-- 4. AMENIDADES -->
+  <section class="section-pad bg-piedra" id="amenidades">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="kicker">Amenidades</p>
+        <h2>Todo para una estancia sin complicaciones</h2>
+      </div>
+
+      <div class="amenities-grid stagger">
+        <div class="amenity-card">
+          <span class="amenity-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-2-8-6-8-11a8 8 0 0 1 8-8c5 0 9 4 9 8 0 6-5 9-9 11z"/><path d="M12 21V10"/></svg>
+          </span>
+          <div>
+            <h3>Áreas verdes</h3>
+            <p>Jardines y espacios naturales para desconectar.</p>
+          </div>
+        </div>
+
+        <div class="amenity-card">
+          <span class="amenity-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 3-1 4-1 6.5a3 3 0 0 0 6 0c0-1.2-.5-2-1-2.7"/><path d="M8 12.5a4 4 0 1 0 8 0c0-2.5-1.5-3.7-2.3-5"/></svg>
+          </span>
+          <div>
+            <h3>Asadores</h3>
+            <p>Espacios para preparar tus propias parrilladas.</p>
+          </div>
+        </div>
+
+        <div class="amenity-card">
+          <span class="amenity-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 16V8h3a3 3 0 0 1 0 6h-3"/></svg>
+          </span>
+          <div>
+            <h3>Estacionamiento</h3>
+            <p>Espacio disponible dentro del complejo.</p>
+          </div>
+        </div>
+
+        <div class="amenity-card">
+          <span class="amenity-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4.5 3-3.5 6 6"/><path d="M3 20h18"/></svg>
+          </span>
+          <div>
+            <h3>Acceso cercano a cascadas</h3>
+            <p>A un paso de las Cascadas de Tamasopo.</p>
+          </div>
+        </div>
+
+        <div class="amenity-card">
+          <span class="amenity-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l-1 6a3 3 0 0 1-6 0L8 3z"/><path d="M12 12v6"/><path d="M9 21h6"/></svg>
+          </span>
+          <div>
+            <h3>Restaurante-bar en el complejo</h3>
+            <p>Comida y bebida sin salir de Cabañas JAC.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5/6. RESTAURANTE-BAR (sticky scroll) -->
+  <section class="section-pad bg-piedra-soft" id="restaurante-bar">
+    <div class="container">
+      <div class="sticky-section">
+        <div class="sticky-media reveal">
+          <picture>
+            <source srcset="img/restaurante-noche-480.webp 480w, img/restaurante-noche-900.webp 900w" sizes="(min-width: 1024px) 45vw, 90vw" type="image/webp">
+            <img src="img/restaurante-noche.webp" width="900" height="753" alt="Fachada iluminada de Cabañas JAC al anochecer, con el restaurante-bar visible a través de los ventanales" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="sticky-text reveal">
+          <p class="kicker">Restaurante-Bar</p>
+          <h2>La Cabaña del Bamboo</h2>
+          <p class="lead">Después de un día de cascadas y naturaleza, nuestro restaurante-bar es el lugar para relajarte con buena comida y bebida, en un ambiente natural rodeado de bambú.</p>
+          <div class="sticky-gallery">
+            <picture>
+              <source srcset="img/restaurante-detalle-480.webp 480w, img/restaurante-detalle-900.webp 900w" sizes="220px" type="image/webp">
+              <img src="img/restaurante-detalle.webp" width="900" height="755" alt="Detalle de decoración del restaurante-bar de Cabañas JAC" loading="lazy" decoding="async">
+            </picture>
+            <picture>
+              <source srcset="img/restaurante-letrero-480.webp 480w, img/restaurante-letrero-900.webp 900w" sizes="220px" type="image/webp">
+              <img src="img/restaurante-letrero.webp" width="900" height="755" alt="Letrero de La Cabaña del Bamboo, Restaurante-Bar de Cabañas JAC" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <p class="mock-note tag-note"><!-- MOCK: nombre identificado en la señalética del propio negocio; confirmar oficialidad con el cliente antes de publicar --> Nombre por confirmar con el cliente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. GALERÍA -->
+  <section class="section-pad bg-piedra" id="galeria">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="kicker">Galería</p>
+        <h2>Un vistazo a Cabañas JAC</h2>
+        <p class="lead">Entorno de bambú y río, fachada y recepción, cabañas, áreas al aire libre y nuestro restaurante-bar.</p>
+      </div>
+
+      <div class="gallery-grid stagger">
+        <figure class="gallery-item wide">
+          <picture>
+            <source srcset="img/galeria-bambu-canal-480.webp 480w, img/galeria-bambu-canal-900.webp 900w, img/galeria-bambu-canal-1600.webp 1600w" sizes="(min-width: 768px) 45vw, 90vw" type="image/webp">
+            <img src="img/galeria-bambu-canal.webp" width="900" height="736" alt="Canal de agua entre un bosque de bambú en Cabañas JAC" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item tall">
+          <picture>
+            <source srcset="img/galeria-poza-480.webp 480w, img/galeria-poza-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+            <img src="img/galeria-poza.webp" width="900" height="1125" alt="Poza de agua turquesa rodeada de vegetación cerca de Cabañas JAC" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item tall">
+          <picture>
+            <source srcset="img/galeria-canon-480.webp 480w, img/galeria-canon-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+            <img src="img/galeria-canon.webp" width="900" height="1200" alt="Cañón con cascada en la zona de las Cascadas de Tamasopo" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item wide">
+          <picture>
+            <source srcset="img/galeria-recepcion-480.webp 480w, img/galeria-recepcion-900.webp 900w, img/galeria-recepcion-1600.webp 1600w" sizes="(min-width: 768px) 45vw, 90vw" type="image/webp">
+            <img src="img/galeria-recepcion.webp" width="900" height="605" alt="Letrero de recepción de Cabañas JAC sobre un muro de piedra" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item tall">
+          <picture>
+            <source srcset="img/galeria-arco-480.webp 480w, img/galeria-arco-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+            <img src="img/galeria-arco.webp" width="900" height="1182" alt="Arco de piedra entre la vegetación de Cabañas JAC" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item square">
+          <picture>
+            <source srcset="img/galeria-puerta-cabana-480.webp 480w, img/galeria-puerta-cabana-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+            <img src="img/galeria-puerta-cabana.webp" width="900" height="754" alt="Puerta de madera de una cabaña de Cabañas JAC" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item tall">
+          <picture>
+            <source srcset="img/galeria-terraza-cabana-480.webp 480w, img/galeria-terraza-cabana-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+            <img src="img/galeria-terraza-cabana.webp" width="900" height="1350" alt="Terraza privada de una cabaña de Cabañas JAC con mesa y sillas" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item square">
+          <picture>
+            <source srcset="img/galeria-balcon-480.webp 480w, img/galeria-balcon-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+            <img src="img/galeria-balcon.webp" width="900" height="754" alt="Balcón con plantas y vista al bosque en Cabañas JAC" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item square">
+          <picture>
+            <source srcset="img/galeria-jardin-480.webp 480w, img/galeria-jardin-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+            <img src="img/galeria-jardin.webp" width="900" height="900" alt="Andador y mesas de picnic entre los jardines de Cabañas JAC" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item tall">
+          <picture>
+            <source srcset="img/galeria-pasillo-noche-480.webp 480w, img/galeria-pasillo-noche-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+            <img src="img/galeria-pasillo-noche.webp" width="900" height="1200" alt="Pasillo techado de bambú iluminado al anochecer en Cabañas JAC" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="gallery-item tall">
+          <picture>
+            <source srcset="img/galeria-puente-entrada-480.webp 480w, img/galeria-puente-entrada-900.webp 900w" sizes="(min-width: 768px) 22vw, 45vw" type="image/webp">
+            <img src="img/galeria-puente-entrada.webp" width="900" height="1200" alt="Puente de entrada a Cabañas JAC y su restaurante-bar sobre el río" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. TESTIMONIOS -->
+  <section class="section-pad bg-piedra-soft" id="testimonios">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="kicker">Huéspedes</p>
+        <h2>Lo que se vive en Cabañas JAC</h2>
+      </div>
+      <!-- MOCK: testimonios de ejemplo; sustituir por reseñas reales del cliente -->
+      <div class="cards-grid cols-3 stagger">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Llegamos cansados de manejar y el lugar nos regresó la calma de inmediato. Las cascadas están prácticamente a un paso.</p>
+          <p class="testimonial-author">Huésped</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">La cabaña estaba justo como se veía en fotos, rodeada de verde de verdad. Volveríamos sin pensarlo.</p>
+          <p class="testimonial-author">Huésped</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Cenamos en el restaurante-bar después de un día completo de cascadas — el cierre perfecto.</p>
+          <p class="testimonial-author">Huésped</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CTA INTERMEDIO -->
+  <section class="section-pad bg-piedra">
+    <div class="container">
+      <div class="cta-banner cta-full reveal">
+        <h2>Tu aventura en la Huasteca empieza aquí.</h2>
+        <!-- MOCK: reemplazar href con el link real de WhatsApp -->
+        <a href="#" class="btn">Reserva tu cabaña</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. UBICACIÓN -->
+  <section class="section-pad bg-piedra-soft" id="ubicacion">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info reveal">
+          <p class="kicker">Ubicación</p>
+          <h2>Cómo llegar</h2>
+          <p class="lead">Ubicados en Tamasopo, S.L.P., en la zona de las Cascadas de Tamasopo, en el corazón de la Huasteca Potosina.</p>
+          <address class="location-address">
+            Tamasopo, San Luis Potosí, México<br>
+            <span class="mock-note"><!-- MOCK: no se publica una dirección inventada; dirección exacta pendiente de confirmar con el cliente -->Dirección exacta: por confirmar</span>
+          </address>
+          <picture>
+            <source srcset="img/ubicacion-cascada-480.webp 480w, img/ubicacion-cascada-900.webp 900w, img/ubicacion-cascada-1600.webp 1600w" sizes="(min-width: 1024px) 45vw, 90vw" type="image/webp">
+            <img src="img/ubicacion-cascada.webp" width="900" height="788" style="border-radius: var(--radius-lg); margin-top: 1rem;" alt="Cascadas de Tamasopo, a un paso de Cabañas JAC" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="map-frame reveal">
+          <!-- MOCK: query genérica; ajustar en cuanto se confirmen dirección exacta y coordenadas -->
+          <iframe
+            src="https://www.google.com/maps?q=Caba%C3%B1as+JAC%2C+Tamasopo%2C+S.L.P.&output=embed"
+            title="Mapa de ubicación de Cabañas JAC en Tamasopo, S.L.P."
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. CTA FINAL -->
+  <section class="section-pad bg-piedra">
+    <div class="container">
+      <div class="cta-banner reveal" style="background: var(--white); border: 1px solid rgba(138,111,69,0.2);">
+        <h2>Ven a vivir la Huasteca Potosina.</h2>
+        <!-- MOCK: reemplazar href con el link real de WhatsApp -->
+        <a href="#" class="btn">Reserva tu cabaña</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer>
-  &copy; <span id="year"></span> Cabañas JAC. Todos los derechos reservados.
+<!-- 12. FOOTER -->
+<footer class="site-footer" id="contacto">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img
+          class="brand-logo"
+          src="img/logo-192.webp"
+          srcset="img/logo-96.webp 96w, img/logo-192.webp 192w, img/logo-320.webp 320w"
+          sizes="56px"
+          width="192" height="192"
+          alt="Cabañas JAC">
+        <p>Hospedaje en contacto con la naturaleza, en el corazón de la Huasteca Potosina.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <!-- MOCK: reemplazar con el número real de WhatsApp en cuanto el cliente lo confirme -->
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Síguenos</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/cabanas_jac" target="_blank" rel="noopener">Instagram @cabanas_jac</a></li>
+          <li><a href="https://www.facebook.com/jactamasopo" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/cabanas_jac" target="_blank" rel="noopener" aria-label="Instagram de Cabañas JAC">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 2.1.25 2.83.53a5.7 5.7 0 0 1 2.06 1.34 5.7 5.7 0 0 1 1.34 2.06c.28.72.48 1.66.53 2.83.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 2.1-.53 2.83a5.9 5.9 0 0 1-3.4 3.4c-.72.28-1.66.48-2.83.53-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-2.1-.25-2.83-.53a5.7 5.7 0 0 1-2.06-1.34 5.7 5.7 0 0 1-1.34-2.06c-.28-.72-.48-1.66-.53-2.83C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.25-2.1.53-2.83A5.7 5.7 0 0 1 4.14 2.26 5.7 5.7 0 0 1 6.2.92c.72-.28 1.66-.48 2.83-.53C10.28 2.2 10.68 2.2 12 2.2zm0 3.05a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5zm0 11.13a4.38 4.38 0 1 1 0-8.76 4.38 4.38 0 0 1 0 8.76zm7.02-11.4a1.58 1.58 0 1 1-3.15 0 1.58 1.58 0 0 1 3.15 0z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/jactamasopo" target="_blank" rel="noopener" aria-label="Facebook de Cabañas JAC">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8.1h2.72l.41-3.16h-3.13V7.7c0-.92.25-1.54 1.57-1.54h1.68V3.34C16.44 3.24 15.5 3.15 14.4 3.15c-2.4 0-4.04 1.46-4.04 4.15v2.6H7.63v3.16h2.73V21h3.14z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#alojamiento">Alojamiento</a></li>
+          <li><a href="#restaurante-bar">Restaurante-Bar</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="currentYear">2026</span> Cabañas JAC. Todos los derechos reservados.</span>
+      <span>Tamasopo, S.L.P. — Cascadas de Tamasopo, Huasteca Potosina</span>
+    </div>
+  </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
+<script src="js/main.js" defer></script>
 </body>
 </html>
